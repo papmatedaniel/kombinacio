@@ -1,6 +1,11 @@
 import random 
-
+import os
+import time
+szamlalo = 0
+start_time = time.time()
 while True:
+    szamlalo += 1
+    os.system("clear")
     
     lista = [random.randint(1,6) for i in range(5)] 
     lista.sort() 
@@ -37,3 +42,13 @@ while True:
     if len(statisztika) == 1: 
          print("Yahtzee azaz 5 egyforma")
          break
+
+end_time = time.time()
+execution_time = end_time - start_time
+
+print(f"Ennyi próbálkozás után dobtad ki a Yahtzee-t {szamlalo}")
+print(f"Ennyi idő alatt futott le a kód: {execution_time} secundum")
+print(f"Ennyi idő alatt fut le egy ciklus {execution_time / szamlalo}")
+
+print("gyuri tipp: 4000")
+print("mate tipp: 3000")
